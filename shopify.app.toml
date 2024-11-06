@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "efc4c4d3df2567ba58475a4368713be9"
+name = "Product Discount App"
+handle = "product-discount-app-167"
+application_url = "https://absent-serum-cancel-detail.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://absent-serum-cancel-detail.trycloudflare.com/auth/callback",
+  "https://absent-serum-cancel-detail.trycloudflare.com/auth/shopify/callback",
+  "https://absent-serum-cancel-detail.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-10"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "pramod-development-store.myshopify.com"
+automatically_update_urls_on_dev = true
